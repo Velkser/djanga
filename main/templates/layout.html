@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Это моя самая интересная страница о HTML" />
+    <title>{% block title %}{% endblock %}</title>
+    <!--<link rel="stylesheet" href="https://kit.fontawesome.com/d1caefdb5e.css" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+
+</head>
+
+<body>
+    <aside>
+        <img src="{% static 'main/img/logo1.png' %}" alt="logo">
+        <span class = "logo">ItProger</span>
+        <h3>Навигация</h3>
+        
+        <ul>
+            <a href = "{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
+            <a href = "{% url 'about' %}"><li><i class="fa-solid fa-address-card"></i>Про нас</li></a>
+            <a href = ""><li><i class="fa-brands fa-telegram"></i>Контакты</li></a>
+            <a href = "{% url 'login' %}"><li><i class="fa-solid fa-right-to-bracket"></i>Логин</li></a>
+
+        </ul>
+    </aside>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+</body>
+
+</html> 
